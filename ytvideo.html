@@ -12,8 +12,8 @@
     frameborder="0"></iframe>
   <script type="text/javascript">
     function stuff() {
-      var sites = ['https://www.youtube.com/embed/_Zd0tR7wpL4?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&enablejsapi=1',
-        'https://www.youtube.com/embed/toG7B7bEZeU?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&enablejsapi=1']
+      var sites = ['https://www.youtube.com/embed/_Zd0tR7wpL4?autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=0&enablejsapi=1',
+        'https://www.youtube.com/embed/toG7B7bEZeU?autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=0&enablejsapi=1']
       document.getElementById('player').src = sites[Math.floor(Math.random() * sites.length)];
 
       player = new YT.Player('player', {
@@ -36,7 +36,7 @@
     function onPlayerStateChange(event) {
       console.log(event)
       if (event.data === 0) {
-        window.location.href = "./photos.html";
+        window.location.href = "photos.html";
       }
     }
   </script>
