@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body onload="stuff()">
-    <iframe id="player" type="text/html" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" frameborder="0"></iframe>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body onload="stuff()">
+  <iframe id="player" type="text/html"
+    style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
+    frameborder="0"></iframe>
   <script type="text/javascript">
-    function stuff(){
+    function stuff() {
       var sites = ['https://www.youtube.com/embed/_Zd0tR7wpL4?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&enablejsapi=1',
-          'https://www.youtube.com/embed/toG7B7bEZeU?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&enablejsapi=1']
+        'https://www.youtube.com/embed/toG7B7bEZeU?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&enablejsapi=1']
       document.getElementById('player').src = sites[Math.floor(Math.random() * sites.length)];
 
       player = new YT.Player('player', {
@@ -31,10 +35,11 @@
 
     function onPlayerStateChange(event) {
       console.log(event)
-      if(event.data === 0) {
-          window.location = window.location.href + "./photos.html";
+      if (event.data === 0) {
+        window.location.href = "./photos.html";
       }
     }
   </script>
-  </body>
+</body>
+
 </html>
