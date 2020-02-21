@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>XU slideshow</title>
+    <link href="photos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <img class="photo" src="./images/1.jpg">
+       
+        <img class="photo" src="./images/2.jpeg">
+
+        <img class="photo" src="./images/3.jpg">
+
+        <img class="photo" src="./images/4.jpeg">
+
+        <img class="photo" src="./images/5.jpg">
+
+    </div>
+</body>
+
+<script>
+    let photos = document.getElementsByClassName("photo");
+    console.log(photos);
+    let counter = 0;
+
+    setInterval(function () {
+        if (counter < photos.length) {
+            for (let x = 0; x < photos.length; x++) {
+                if (x != counter) {
+                    photos[x].style.cssText = "display: none;";
+                }
+            }
+            photos[counter].style.cssText = "display: block;"
+            counter++;
+        } else {
+           window.location.href = "ytvideo.html";
+        }
+    }, 3000);
+
+</script>
+
+</html>
